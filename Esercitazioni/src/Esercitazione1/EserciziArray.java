@@ -1,6 +1,6 @@
 package Esercitazione1;
 
-public class Esercitazione1 {
+public class EserciziArray {
 	
 
 	public static void main(String[] args) {
@@ -21,6 +21,14 @@ public class Esercitazione1 {
 		//test es3 array
 		int [] ai4 = {1,1,2,2,3,3,3};
 		treConsecutivi(ai4);
+		System.out.println();
+		
+		//test es4 array
+		String [] as1 = {"Ciao", "amico", "mio", "come", "stai?"};
+		String [] as2 = {"Hi", "my", "frind", "come", "on!"};
+		String [] as3 = {"Array di", "stringhe", "senza", "parole", "uguali"};
+		equalsString(as1, as2);
+		equalsString(as1, as3);
 		System.out.println();
 
 
@@ -54,9 +62,6 @@ public class Esercitazione1 {
 					sommaDispari+=ai[i];
 			}
 		
-		System.out.println(sommaPari);
-		System.out.println(sommaDispari);
-		
 		if (sommaPari==sommaDispari)
 			System.out.println("Pari e dispari uguali");
 		else
@@ -83,4 +88,21 @@ public class Esercitazione1 {
 		else 
 			System.out.println("NO");
 	}
+	
+	//es4 array
+	public static void equalsString (String[] as1, String[] as2) {
+		/*se non sapessi da specifica che sono obbligatoriamente
+		  di 5 elementi, farei dei controlli sulle dimensioni*/
+		boolean eq=false;
+		for (int i=0; i<as1.length; ++i) 
+			for (int j=0; j<as2.length; ++j) 
+				if(as1[i].equals(as2[j]))
+						eq=true;
+		if(eq==true)
+			System.out.println("OK");
+		else
+			System.out.println("KO");		
+						
+	}
+	
 }
