@@ -1,15 +1,15 @@
-package Esercitazioni1;
+package Esercitazione1;
 
 public class Esercitazione1 {
 	
 
 	public static void main(String[] args) {
 		
-		int [] ai1 = {1,2,3,4,5,6};
+		int [] ai1 = {1,2,3,4,5,6,7,8,9,10};
 		stampaPrimoUltimo(ai1);
 		System.out.println();
 		
-		int [] ai2 = {1,2,3,4,5,6,7};
+		int [] ai2 = {1,2,3,4,5,6,7,8,9};
 		stampaPrimoUltimo(ai2);
 
 	}
