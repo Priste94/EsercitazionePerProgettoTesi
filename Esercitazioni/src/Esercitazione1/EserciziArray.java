@@ -28,6 +28,7 @@ public class EserciziArray {
 		String [] as2 = {"Hi", "my", "frind", "come", "on!"};
 		String [] as3 = {"Array di", "stringhe", "senza", "parole", "uguali"};
 		equalsString(as1, as2);
+		System.out.println();
 		equalsString(as1, as3);
 		System.out.println();
 
@@ -37,15 +38,15 @@ public class EserciziArray {
 	public static void stampaPrimoUltimo(int[] ai) {
 		if (ai.length%2==0) //se la lunghezza è pari
 			for (int i=0; i<ai.length/2; ++i) {
-				System.out.println(ai[i]);
-				System.out.println(ai[ai.length-1-i]);
+				System.out.print(ai[i] + " ");
+				System.out.print(ai[ai.length-1-i] + " ");
 			}
 		else {              //se la lunghezza è dispari
 			for (int i=0; i<ai.length/2; ++i) {
-				System.out.println(ai[i]);
-				System.out.println(ai[ai.length-1-i]);
+				System.out.print(ai[i] + " ");
+				System.out.print(ai[ai.length-1-i] + " ");
 			}
-			System.out.println(ai[ai.length/2]);
+			System.out.print(ai[ai.length/2]);
 		}
 			
 	}
@@ -63,9 +64,9 @@ public class EserciziArray {
 			}
 		
 		if (sommaPari==sommaDispari)
-			System.out.println("Pari e dispari uguali");
+			System.out.print("Pari e dispari uguali");
 		else
-			System.out.println("Pari e dispari diversi");
+			System.out.print("Pari e dispari diversi");
 	}
 	
 	//es3 array
@@ -84,9 +85,9 @@ public class EserciziArray {
 			}
 		}
 		if (contatore==3)
-			System.out.println("Tre valori consecutivi uguali");
+			System.out.print("Tre valori consecutivi uguali");
 		else 
-			System.out.println("NO");
+			System.out.print("NO");
 	}
 	
 	//es4 array
@@ -99,9 +100,9 @@ public class EserciziArray {
 				if(as1[i].equals(as2[j]))
 						eq=true;
 		if(eq==true)
-			System.out.println("OK");
+			System.out.print("OK");
 		else
-			System.out.println("KO");		
+			System.out.print("KO");		
 						
 	}
 	
