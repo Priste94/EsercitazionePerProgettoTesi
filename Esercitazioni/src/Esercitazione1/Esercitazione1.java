@@ -18,6 +18,11 @@ public class Esercitazione1 {
 		pariEDispari(ai3);		
 		System.out.println();
 		
+		//test es3 array
+		int [] ai4 = {1,1,2,2,3,3,3};
+		treConsecutivi(ai4);
+		System.out.println();
+
 
 	}
 	//es1 array
@@ -56,5 +61,26 @@ public class Esercitazione1 {
 			System.out.println("Pari e dispari uguali");
 		else
 			System.out.println("Pari e dispari diversi");
-	}				
+	}
+	
+	//es3 array
+	public static void treConsecutivi (int[] ai) {
+		
+		int contatore=1;
+		int tmp=-1;
+		for (int i=0; i<ai.length && contatore < 3; ++i) {
+			if (ai[i]==tmp) {
+				contatore++;
+				tmp = ai[i];
+				}		
+			else {
+				contatore=1;
+				tmp = ai[i];
+			}
+		}
+		if (contatore==3)
+			System.out.println("Tre valori consecutivi uguali");
+		else 
+			System.out.println("NO");
+	}
 }
