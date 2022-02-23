@@ -1,6 +1,5 @@
-package Esercitazione2;
+package Esercitazione2.es1e2;
 
-import java.time.LocalDate;
 
 public class eserciziPersona {
 

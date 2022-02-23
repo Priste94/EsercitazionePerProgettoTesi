@@ -1,4 +1,4 @@
-package Esercitazione2;
+package Esercitazione2.es1e2;
 
 public class Stagista extends Person{
 	private int numberOfPresence, idNumber;

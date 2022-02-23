@@ -1,4 +1,4 @@
-package Esercitazione3;
+package Esercitazione2.es3e4;
 
 public class TestVehicles {
 

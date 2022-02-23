@@ -1,4 +1,4 @@
-package Esercitazione2;
+package Esercitazione2.es1e2;
 
 public class Employee extends Person{
 	

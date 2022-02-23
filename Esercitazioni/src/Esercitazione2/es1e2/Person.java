@@ -1,4 +1,4 @@
-package Esercitazione2;
+package Esercitazione2.es1e2;
 import java.time.LocalDate;
 
 public class Person {
@@ -57,7 +57,7 @@ public class Person {
 	//metodo creato per errore
 	public int quantiAnni() {
 		String anniS = "";
-		int anni = 0;
+
 		LocalDate current_date = LocalDate.now();
 		int current_Year = current_date.getYear();
 		anniS += taxCode.charAt(6);

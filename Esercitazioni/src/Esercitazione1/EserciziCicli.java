@@ -117,6 +117,7 @@ public class EserciziCicli {
 		        System.out.println();
 			}
 		}
+		scanner.close();
 	}
 	
 }
