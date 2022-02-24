@@ -23,6 +23,11 @@ public class ProdottiNonAlimentari extends Prodotti{
 		if(materiale == "carta" || materiale == "vetro" || materiale == "plastica")
 			prezzo *= 0.9;
 	}
+
+	@Override
+	public String toString() {
+		return  super.toString() +" materiale = " + materiale;
+	}
 	
 	
 
