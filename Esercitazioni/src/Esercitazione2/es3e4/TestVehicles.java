@@ -12,12 +12,12 @@ public class TestVehicles {
 		m2 = new Motocycle("NM560QW", "KTM", "2015", false, 250);
 		
 		Vehicle [] veicoli = {c1, c2, m1, m2};
-		veicoli[1].setGuasto(true);
-		veicoli[2].setGuasto(true);
+		veicoli[1].guasto = true;
+		veicoli[2].guasto = true;
 		
 		for (int i=0; i<veicoli.length; ++i)
 			if(veicoli[i].isGuasto())
-				System.out.println(veicoli[i].getTarga());
+				System.out.println(veicoli[i].targa);
 		
 	}
 

@@ -3,6 +3,8 @@ package Esercitazione2.es3e4;
 public class Car extends Vehicle{
 	private String tipologia;
 
+	
+	@Override
 	public String getTipologia() {
 		return tipologia;
 	}
