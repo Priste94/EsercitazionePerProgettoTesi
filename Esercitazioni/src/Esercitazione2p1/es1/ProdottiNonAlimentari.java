@@ -1,4 +1,4 @@
-package Esercitazione2p1;
+package Esercitazione2p1.es1;
 
 public class ProdottiNonAlimentari extends Prodotti{
 	
