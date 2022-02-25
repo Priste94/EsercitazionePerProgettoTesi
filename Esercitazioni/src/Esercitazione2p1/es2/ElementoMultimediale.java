@@ -9,7 +9,7 @@ public abstract class ElementoMultimediale {
 
 	public ElementoMultimediale(String titolo) {
 		super();
-		if (titolo!= null)		
+		if (titolo != null)		
 			this.titolo = titolo;
 	}
 	
