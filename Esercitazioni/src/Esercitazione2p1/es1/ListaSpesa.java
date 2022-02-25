@@ -21,6 +21,7 @@ public class ListaSpesa {
 		String scelta = "";
 		do {
 		System.out.println("Dimmi cosa vuoi acquistare digitando un numero alla volta tra 0 e "+(prodottiDisponibili.length-1));
+		System.out.println();
 		for (int i=0; i<prodottiDisponibili.length; ++i)
 			System.out.println(i+ " - "+prodottiDisponibili[i].toString());
 		int rispostaUtente = scanner.nextInt();
