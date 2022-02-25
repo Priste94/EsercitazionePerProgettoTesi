@@ -1,5 +1,7 @@
 package Esercitazione2p1.es2;
 
+import java.util.Scanner;
+
 public abstract class ElementoMultimediale {
 	
 	protected String titolo = "senzaNome";
@@ -12,6 +14,7 @@ public abstract class ElementoMultimediale {
 	}
 	
 	public abstract void esegui();
-	public abstract void cambiaParametri(boolean l, boolean v);
+	public abstract void modificaParametri(Scanner in);
+
 
 }

@@ -59,7 +59,7 @@ public class LettoreMultimediale {
 		}
 				
 		do {
-			System.out.println("Quale file multimediale vuoi eseguire? (indica come un numero da 1 a 5)");
+			System.out.println("Quale file multimediale vuoi eseguire? (indica come un numero da 1 a 5, 0 per uscire)");
 			for (int i=0; i<em.length; i++) 
 				if (em[i]!=null)
 					System.out.println((i+1)+") "+em[i].titolo);
@@ -67,12 +67,11 @@ public class LettoreMultimediale {
 			if (scelta > 0) { 
 				if (em[scelta-1]!=null)
 					em[scelta-1].esegui();	
-				System.out.println("Vuoi modificarne i parametri? (si o no)");
-				supporto = scanner.next();
-				//if (supporto.equalsIgnoreCase("si"))
-				// programma da terminare
-					
-					
+				System.out.println("Ho eseguito il file, vuoi modificare qualcosa del file multimediale? [Y/N]");
+	            String scelta2 = scanner.next();
+	            if (scelta2.equalsIgnoreCase("y"))
+	                em[scelta - 1].modificaParametri(scanner);
+	            
 			}
 		}
 			while (scelta != 0);

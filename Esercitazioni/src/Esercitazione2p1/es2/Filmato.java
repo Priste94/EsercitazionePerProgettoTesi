@@ -1,24 +1,26 @@
 package Esercitazione2p1.es2;
 
+import java.util.Scanner;
+
 public class Filmato extends Audio{
 
-	private int luminosità = 0;
+	private int luminosita = 0;
 	
 	public Filmato(String titolo,int durata, int volume, int luminosità) {
 		super(titolo, durata,volume);
 		if(luminosità>=0)
-			this.luminosità = luminosità;
+			this.luminosita = luminosita;
 	}
 
-	public void brighter() {
-		if(luminosità>=1)
-			luminosità -= 1;
-	}
+	public void brighter(int bright) {
+        if (bright > this.luminosita) this.luminosita = bright;
+        else System.out.println("valore inserito inferiore o uguale");
+    }
 	
-	public void darker() {
-		if(luminosità<10)  //ho assunto che la luminosità massima sia a 10
-			luminosità += 1;
-	}	
+	public void darker(int dark) {
+        if (dark < this.luminosita) this.luminosita = dark;
+        else System.out.println("valore inserito superiore o uguale");
+    }
 	
 	@Override
 	public void play() {
@@ -27,7 +29,7 @@ public class Filmato extends Audio{
 		for (int i=0; i<volume; ++i)
 			esclamativi+="!";
 		
-		for (int i=0; i<luminosità; ++i)
+		for (int i=0; i<luminosita; ++i)
 			asterischi+="*";
 		
 		for (int i=0; i<durata; ++i) 
@@ -43,21 +45,25 @@ public class Filmato extends Audio{
 	}
 
 	@Override
-	public void cambiaParametri(boolean l, boolean v) {
-		if (l)
-			super.cambiaParametri(l, v);
-		else if (v)
-			this.brighter();
-		else if (!v)
-			this.darker();
-		else
-			this.weaker();
-
-		
-	}
-	
-	
-	
-	
+	public void modificaParametri(Scanner in)
+    {
+        int luminosita,volume;
+        System.out.println("Inserire nuovo valore di Luminosità per " + titolo);
+        luminosita = in.nextInt();
+        in.nextLine();
+        if (this.luminosita > luminosita)
+            darker(luminosita);
+        else
+            brighter(luminosita);
+        
+        System.out.println("Inserire il nuovo valore di Volume per " + titolo);
+        volume = in.nextInt();
+        in.nextLine();
+        if (this.volume > volume)
+            weaker(volume);
+        else
+            louder(volume);
+    
+    }
 	
 }
