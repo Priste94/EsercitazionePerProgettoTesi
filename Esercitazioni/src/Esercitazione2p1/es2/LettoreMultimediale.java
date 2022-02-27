@@ -15,7 +15,7 @@ public class LettoreMultimediale {
 		int luminosità = 0;
 		String supporto = "";
 		
-		for (int i=0; i<2; i++) {
+		for (int i=0; i<em.length; i++) {
 			do {
 				System.out.println("Che tipo di elemento multimediale vuoi inserire? (indica come un numero da 1 a 3)");
 				System.out.println("1) Audio");
