@@ -9,12 +9,21 @@ public class testOperandi {
 		Divisione d1 = new Divisione();
 		Moltiplicazione m1 = new Moltiplicazione();
 		
+		Addizione a = new Addizione();
+		
 		Operazione[] op = {a1, s1, d1, m1};
 		
 		for (int i=0; i<op.length; ++i) {					
 			op[i].opera(10, 2);
+			if (op[i] instanceof Addizione) {
+				a = (Addizione) op[i];
+				System.out.println(a.getCiao());
+			}
+			
 
 		}	
+		
+	
 			
 	}
 		
