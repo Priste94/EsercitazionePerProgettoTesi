@@ -1,18 +1,15 @@
-package EsercitazioniCollectionMap.Es1_Tipi_di_Bevande;
+package EsercitazioniCollectionMap;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-
-import EsercitazioniCollectionMap.Es2_Credito.Tessera;
-import EsercitazioniCollectionMap.Es2_Credito.TesseraNonValidaException;
 
 public class TestDistributore {
 
 	public static void main(String[] args) {
 		
 		
-		Distributore d = new Distributore(new HashMap<String, Bevanda>(), new HashMap<Integer, Tessera>());
+		Distributore d = new Distributore(new HashMap<String, Bevanda>(), new HashMap<Integer, Tessera>(), new HashMap<Integer, Lattina>());
 		
 		d.aggiungiBevanda(new Bevanda("A", "Acqua", 0.2));
 		d.aggiungiBevanda(new Bevanda("B", "Coca", 0.3));
@@ -21,6 +18,20 @@ public class TestDistributore {
 		d.getDistributoret().put(12, new Tessera(12, 5.5));
 		d.getDistributoret().put(21, new Tessera(21, 10.0));
 		d.getDistributoret().put(99, new Tessera(99, 0.75));
+		
+		for (int j=1; i<=4; ++i) {
+			d.getDistributorel().get(d)
+		}
+		
+		d.aggiornaColonna(1, "Acqua", 40);	
+		d.aggiornaColonna(2, "Coca", 1);
+		d.aggiornaColonna(3, "Birra", 50);
+		d.aggiornaColonna(4, "Acqua", 50);
+				
+		
+
+			System.out.println(d.getDistributorel().toString());
+		
 		
 		try {
 			for(Entry<String, Bevanda> b : d.getDistributoreb().entrySet()) {

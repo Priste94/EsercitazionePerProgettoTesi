@@ -1,4 +1,4 @@
-package EsercitazioniCollectionMap.Es1_Tipi_di_Bevande;
+package EsercitazioniCollectionMap;
 
 public class BevandaNonValidaException extends Exception{
 

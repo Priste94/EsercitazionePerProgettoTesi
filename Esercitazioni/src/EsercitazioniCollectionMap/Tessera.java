@@ -1,4 +1,4 @@
-package EsercitazioniCollectionMap.Es2_Credito;
+package EsercitazioniCollectionMap;
 
 public class Tessera {
 	private int codice;

@@ -1,21 +1,28 @@
-package EsercitazioniCollectionMap.Es1_Tipi_di_Bevande;
+package EsercitazioniCollectionMap;
 
 import java.util.HashMap;
-
-import EsercitazioniCollectionMap.Es2_Credito.Tessera;
-import EsercitazioniCollectionMap.Es2_Credito.TesseraNonValidaException;
 
 public class Distributore {
 	
 private HashMap<String, Bevanda> distributoreb = new HashMap<>();
 private HashMap<Integer, Tessera> distributoret = new HashMap<>();
+private HashMap<Integer, Lattina> distributorel = new HashMap<>();
 
 
 	
-	public Distributore(HashMap<String, Bevanda> distributoreb, HashMap<Integer, Tessera> distributoret) {
+	public HashMap<Integer, Lattina> getDistributorel() {
+	return distributorel;
+}
+
+public void setDistributorel(HashMap<Integer, Lattina> distributorel) {
+	this.distributorel = distributorel;
+}
+
+	public Distributore(HashMap<String, Bevanda> distributoreb, HashMap<Integer, Tessera> distributoret, HashMap<Integer, Lattina> distributorel) {
 	super();
 	this.distributoreb = distributoreb;
 	this.distributoret = distributoret;
+	this.distributorel = distributorel;
 }
 
 	public void aggiungiBevanda(Bevanda b) {
@@ -71,4 +78,11 @@ private HashMap<Integer, Tessera> distributoret = new HashMap<>();
 		this.distributoret = distributore;
 	}
 
+	
+	public void aggiornaColonna(int i, String nomeBevanda, int numeroLattine) {
+		distributorel.get(i).setBevanda(nomeBevanda);
+		distributorel.get(i).setQuantita(numeroLattine);
+		distributorel.
+	}
+	
 }
