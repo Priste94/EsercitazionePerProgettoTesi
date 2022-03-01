@@ -34,9 +34,17 @@ public class TestDistributoreBenzina {
 				+ "2)Rifornimento Distributore\n"
 				+ "3)Calcolo incasso giornaliero\n"
 				+ "4)Comparazione");
+		System.out.println();
 		
 			System.out.println("Inserisci la tua scelta: ");
-			scelta2=scanner.nextInt();
+			
+			while(!scanner.hasNextInt() || scanner == null) {
+				System.out.println("Rispondi con un valore intero!");
+				scelta = scanner.next();		 
+			}
+			scelta = scanner.next();
+			scelta2 = Integer.parseInt(scelta);
+
 			switch(scelta2){
 				case 1:
 					System.out.printf("Ins.num.litri da prelevare ,contenuta: "+
