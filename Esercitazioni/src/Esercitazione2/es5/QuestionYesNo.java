@@ -18,6 +18,10 @@ public class QuestionYesNo extends Question{
 		String rispostaUtente;
 		do {
 			System.out.println("Rispondi solo con si o no!");
+			while(!scanner.hasNext() || scanner == null) {
+				System.out.println("metti una risposta in formato stringa");
+				rispostaUtente = scanner.next();
+				} 
 			rispostaUtente = scanner.next();
 		}
 			while (!rispostaUtente.equalsIgnoreCase("si") && !rispostaUtente.equalsIgnoreCase("no"));

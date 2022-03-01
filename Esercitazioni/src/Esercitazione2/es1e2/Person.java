@@ -9,11 +9,16 @@ public class Person {
 
 	public Person(String surname, String name, String taxCode, String city) {
 		super();
+	 
 		this.surname = surname;
 		this.name = name;
-		this.taxCode = taxCode;
+		if (taxCode!=null) 
+			this.taxCode = taxCode;
+		else
+			this.taxCode = "";
 		this.city = city;
 	}
+	
 
 	public String getSurname() {
 		return surname;
@@ -60,22 +65,30 @@ public class Person {
 
 		LocalDate current_date = LocalDate.now();
 		int current_Year = current_date.getYear();
-		anniS += taxCode.charAt(6);
-		anniS += taxCode.charAt(7);
+		if (!taxCode.isEmpty()) {
+			anniS += taxCode.charAt(6);
+			anniS += taxCode.charAt(7);
+		
 
 		if (Integer.parseInt(anniS)>22) //ho messo 23 come valore fisso, ma andrebbe aggiornato sempre con l' anno attuale
 			anniS = "19" + anniS;       // in più con questa logica mi limito a calcolare l' età di persone fino ad un massimo di
 		else							//99 anni. Per semplicità non ho tenuto conto di giiorno e mese di nascita
 			anniS ="20" + anniS;
 		
+		
 		return (current_Year-(Integer.parseInt(anniS)));
+		}
+		else return 1000;
 	}
 	
 	public int bornYear() {
 		String anniS = "";
-		anniS += taxCode.charAt(6);
-		anniS += taxCode.charAt(7);
-		return Integer.parseInt(anniS);
+		if (!taxCode.isEmpty()) {
+			anniS += taxCode.charAt(6);
+			anniS += taxCode.charAt(7);
+			return Integer.parseInt(anniS);
+		}
+		else return 1000;
 	}
 
 }

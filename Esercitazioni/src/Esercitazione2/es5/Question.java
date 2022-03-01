@@ -18,7 +18,12 @@ public class Question {
 	public int ask() {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println(domanda);
-		String rispostaUtente = scanner.next();
+		String rispostaUtente;
+		while(!scanner.hasNext() || scanner == null) {
+			System.out.println("metti una risposta in formato stringa");
+			rispostaUtente = scanner.next();
+			} 
+		rispostaUtente = scanner.next();
 		if (rispostaUtente.equalsIgnoreCase(risposta))
 			return punteggio;
 		return 0;

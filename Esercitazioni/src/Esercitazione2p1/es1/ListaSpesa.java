@@ -24,12 +24,24 @@ public class ListaSpesa {
 		System.out.println();
 		for (int i=0; i<prodottiDisponibili.length; ++i)
 			System.out.println(i+ " - "+prodottiDisponibili[i].toString());
-		int rispostaUtente = scanner.nextInt();
-		if (rispostaUtente>=0 && rispostaUtente<prodottiDisponibili.length) {
-			prodottiDisponibili[rispostaUtente].applicaSconto();
-			somma += prodottiDisponibili[rispostaUtente].prezzo;
-			System.out.println(somma);
+		int rispostaUtente = -1;
+		while(scanner==null || rispostaUtente<0 || rispostaUtente>prodottiDisponibili.length-1) {
+			System.out.println("inserisci un numero tra quelli proposti");
+			while(!scanner.hasNextInt() || scanner == null) {
+				System.out.println("(metti un numero)");
+				scelta = scanner.next();
+				} 
+			scelta = scanner.next();
+
+				rispostaUtente=Integer.parseInt(scelta);
+				
+			if (rispostaUtente>=0 && rispostaUtente<prodottiDisponibili.length) {
+				prodottiDisponibili[rispostaUtente].applicaSconto();
+				somma += prodottiDisponibili[rispostaUtente].prezzo;
+				System.out.println(somma);
+			}
 		}
+	
 		do {
 		System.out.println("Vuoi acquistare altro? (rispondi si o no)");	
 		scelta = scanner.next();

@@ -14,7 +14,7 @@ public class eserciziPersona {
 		//test stagista
 		Stagista s1,s2,s3, piùGiovane;
 		s1 = new Stagista("Rossi", "Mario", "RSSMRI77.........", "Milano", 5, 123);
-		s2 = new Stagista("Hontas", "Poca", "HNTPCA93.........", "Canicattì", 10, 46);
+		s2 = new Stagista("Hontas", "Poca", null, "Canicattì", 10, 46);
 		s2.setNumberOfPresence(8);
 		s2.setIdNumber(46);
 		s3 = new Stagista("Bianchi", "Paolo", "BNCPLO91........", "Vimercate", 6, 7);

@@ -16,10 +16,16 @@ public class NumericQuestion extends Question{
 	public int ask() {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println(domanda);
+		String scelta;
 		int rispostaUtente;
 
-		System.out.println("Rispondi con un valore intero!");
-		rispostaUtente = scanner.nextInt();
+		while(!scanner.hasNextInt() || scanner == null) {
+			System.out.println("Rispondi con un valore intero!");
+			scelta = scanner.next();
+			} 
+		scelta = scanner.next();
+
+		rispostaUtente = Integer.parseInt(scelta);
 		
 			
 		if (rispostaUtente == risposta)			
