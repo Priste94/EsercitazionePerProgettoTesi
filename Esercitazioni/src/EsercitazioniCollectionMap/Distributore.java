@@ -80,9 +80,48 @@ public void setDistributorel(HashMap<Integer, Lattina> distributorel) {
 
 	
 	public void aggiornaColonna(int i, String nomeBevanda, int numeroLattine) {
-		distributorel.get(i).setBevanda(nomeBevanda);
-		distributorel.get(i).setQuantita(numeroLattine);
-		distributorel.
+		if (distributorel.size() < i)
+			distributorel.put(i, new Lattina(nomeBevanda, numeroLattine));
+		else
+			distributorel.get(i).setBevanda(nomeBevanda);
+			distributorel.get(i).setQuantita(numeroLattine);
+
 	}
+	
+	public int lattineDisponibili(String nome) {
+		int result = 0;
+		if (nome!= null)
+			for (int i=1; i<=distributorel.size(); ++i)  
+				if (nome.equalsIgnoreCase(distributorel.get(i).nomeBevanda))
+					result+=distributorel.get(i).getQuantita();
+			return result;
+	
+	}
+	
+	///&&distributorel.containsValue(distributoreb.get(codBev).getNome())
+	
+	public int eroga(String codBev, int codTes) {
+		String nome;
+		
+		if (codBev!=null&&distributoreb.get(codBev)!=null&&distributoret.get(codTes)!=null) {	// controlli
+			
+//&&distributoreb.get(codBev).getPrezzo()<=distributoret.get(codTes).getCredito() //questo controllo lo levo per lanciare l' eccezione successivamente
+			
+			nome=distributoreb.get(codBev).getNome();	//cosi ottengo dal codice inserito il nome della bevanda
+			if (lattineDisponibili(nome)>0) //ultimo controllo: esiste almeno una lattina disponibile per la bevanda selezionata
+				try {
+					distributoret.get(codTes).decrementaCredito(distributoreb.get(codBev).getPrezzo());
+				} catch (CreditoInsufficienteException e) {  e.printStackTrace(); }
+			
+			for (int i=1; i<=4; ++i) 
+				if (distributorel.get(i).nomeBevanda.equalsIgnoreCase(nome)) {
+					distributorel.get(i).decrementaQuantita();
+					return i;
+				}
+		}
+		System.out.println("Nessuno prodotto trovato!");
+		return 0;
+		
+	}		
 	
 }

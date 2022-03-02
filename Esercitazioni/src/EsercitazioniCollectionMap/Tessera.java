@@ -26,5 +26,12 @@ public class Tessera {
 		this.credito += credito;
 	}
 	
+	public void decrementaCredito(double credito) throws CreditoInsufficienteException{
+		if (this.credito>=credito)
+			this.credito-=credito;
+		else
+			throw new CreditoInsufficienteException("Credito insufficiente!");
+	}
+	
 	
 }

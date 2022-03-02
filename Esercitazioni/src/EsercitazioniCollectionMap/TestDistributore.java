@@ -19,20 +19,13 @@ public class TestDistributore {
 		d.getDistributoret().put(21, new Tessera(21, 10.0));
 		d.getDistributoret().put(99, new Tessera(99, 0.75));
 		
-		for (int j=1; i<=4; ++i) {
-			d.getDistributorel().get(d)
-		}
-		
+
+	
 		d.aggiornaColonna(1, "Acqua", 40);	
 		d.aggiornaColonna(2, "Coca", 1);
 		d.aggiornaColonna(3, "Birra", 50);
 		d.aggiornaColonna(4, "Acqua", 50);
-				
-		
-
-			System.out.println(d.getDistributorel().toString());
-		
-		
+					
 		try {
 			for(Entry<String, Bevanda> b : d.getDistributoreb().entrySet()) {
 				System.out.println(d.getName(b.getValue().getCodice()));
@@ -52,7 +45,44 @@ public class TestDistributore {
 			}
 		} catch (TesseraNonValidaException e) {  e.printStackTrace(); }   
 		
-				
+		System.out.println();
+		System.out.println(d.lattineDisponibili("Acqua"));
+		System.out.println(d.lattineDisponibili("coca"));
+		System.out.println(d.lattineDisponibili("Birra"));
+		System.out.println();
+		
+		System.out.println(d.eroga("A", 12)); //stampa 1
+		
+		System.out.println(d.lattineDisponibili("Acqua")); //i valori sono aggiornati
+		System.out.println(d.lattineDisponibili("coca"));
+		System.out.println(d.lattineDisponibili("Birra"));
+		System.out.println();
+		
+		System.out.println(d.eroga("A", 12));
+		
+		System.out.println(d.lattineDisponibili("Acqua"));
+		System.out.println(d.lattineDisponibili("coca"));
+		System.out.println(d.lattineDisponibili("Birra"));
+		System.out.println();
+		
+		System.out.println(d.eroga("B", 12)); //stampa 2
+		
+		System.out.println(d.lattineDisponibili("Acqua"));
+		System.out.println(d.lattineDisponibili("coca"));
+		System.out.println(d.lattineDisponibili("Birra"));
+		System.out.println();
+		
+		//System.out.println(d.eroga("C", 99)); //lancia eccezione
+		System.out.println(d.eroga("D", 12)); //mi ritorna 0 perchè il codice non è presente
+		
+		System.out.println(d.eroga("B", 12)); //stampa "Lattine terminate!"
+		
+		for (int i=1; i<=4; ++i) {  //situazione colonne distributore
+			System.out.print(i+")");
+			System.out.println(d.getDistributorel().get(i).getQuantita());
+		}
+		
+		
 //      test per eccezione BevandaNonValida
 //		try {
 //		d.getName("D");
