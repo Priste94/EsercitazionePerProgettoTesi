@@ -1,12 +1,18 @@
 package EsercitazioniCollectionMap;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class Distributore {
 	
 private HashMap<String, Bevanda> distributoreb = new HashMap<>();
 private HashMap<Integer, Tessera> distributoret = new HashMap<>();
 private HashMap<Integer, Lattina> distributorel = new HashMap<>();
+
+Iterator itb = distributoreb.entrySet().iterator();
+Iterator itt = distributoret.entrySet().iterator();
+Iterator itl = distributorel.entrySet().iterator();
 
 
 	
@@ -91,10 +97,15 @@ public void setDistributorel(HashMap<Integer, Lattina> distributorel) {
 	public int lattineDisponibili(String nome) {
 		int result = 0;
 		if (nome!= null)
-			for (int i=1; i<=distributorel.size(); ++i)  
+			for (int i=1; i<=distributorel.size(); ++i) 
+				
 				if (nome.equalsIgnoreCase(distributorel.get(i).nomeBevanda))
 					result+=distributorel.get(i).getQuantita();
-			return result;
+			
+
+				
+				return result;	
+
 	
 	}
 	
