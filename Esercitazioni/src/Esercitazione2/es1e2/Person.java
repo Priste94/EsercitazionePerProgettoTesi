@@ -24,7 +24,6 @@ public class Person {
 		return surname;
 	}
 
-	@Override
 	public String toString() {
 		return "Person [surname=" + surname + ", name=" + name + ", taxCode=" + taxCode + ", city=" + city
 				+ ", anni=" + quantiAnni() + ", nato nel=" + bornYear() + "]";
