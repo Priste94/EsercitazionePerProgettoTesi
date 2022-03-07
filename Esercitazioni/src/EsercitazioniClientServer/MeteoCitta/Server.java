@@ -1,9 +1,21 @@
-package EsercitazioniClientServer.MiniChat;
-import java.io.*;
-import java.net.*;
+package EsercitazioniClientServer.MeteoCitta;
 
-public class Server {
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.HashMap;
 
+
+
+
+public class Server{
+	
+	HashMap<String, String> meteoCitta = new HashMap<>();
+	
 	protected int porta = 6788;
 	private ServerSocket server = null;
 	Socket socketClient = null;
@@ -34,34 +46,36 @@ public class Server {
 	public void comunica() {
 		BufferedReader tastiera = new BufferedReader(new InputStreamReader(System.in));
 		
-		try {
-			
-			String letto="",messaggio = "";
-			
-			System.out.println("Scivi:");
-			
-			messaggio = tastiera.readLine();
-			out.writeBytes(messaggio + "\n");
-			System.out.println("In attesa di risposta");
-			letto = in.readLine(); 
-			System.out.println("Messaggio ricevuto: "+letto);
-		
-			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		String letto="",messaggio = "";
+		System.out.println(socketClient.toString());
+//			System.out.println("In attesa di risposta");
+//			letto = in.readLine(); 
+//			System.out.println("Messaggio ricevuto: "+letto);
 		
 		
 	}
+	
+	
+	
 
 	public static void main(String[] args) {
+		Server server = new Server();
+		server.meteoCitta.put("Milano", "Pioggia");
+		server.meteoCitta.put("Roma", "Sole");
+		server.meteoCitta.put("Napoli", "Sole");
+		server.meteoCitta.put("Firenze", "Parzialmente nuvoloso");
 		
-		Server s = new Server();
-		s.connetti();
-		while(true)
-			s.comunica();
-
+		
+		while(true) {
+			server.connetti();
+			
+			server.comunica();
+			
+			
+			
+		}
+		
+		
 	}
 
 }
