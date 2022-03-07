@@ -14,14 +14,19 @@ public class Test {
 			this.c = c;
 		}
 
-		public void riponiSoldi() {
+		public void riponiSoldi() throws InterruptedException {
 			paghetta = (int) ((Math.random()*100)+1);
 			c.deposito(paghetta);
 			
 		}
 		
 		public void run() {
-			riponiSoldi();
+			try {
+				riponiSoldi();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			//c.stampaDenaro();
 		}
 
@@ -41,8 +46,8 @@ public class Test {
 		}
 
 		public void prendiSoldi() {
-			paghetta = (int) ((Math.random()*10)+1);
-			c.prelievo(paghetta);
+;
+			c.prelievo();
 			
 		}
 		
@@ -64,10 +69,12 @@ public class Test {
 		Figlio f1 = new Figlio(c);
 		Figlio f2 = new Figlio(c);
 
+
 		g1.start();		
 		f1.start();
 		g2.start();
 		f2.start();
+		
 //		while ()
 		//g.start();
 
@@ -80,7 +87,6 @@ public class Test {
 		
 		c.stampaDenaro();
 		
-		
-		}
+	}
 
 }

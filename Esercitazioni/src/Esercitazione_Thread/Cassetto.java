@@ -4,9 +4,10 @@ public class Cassetto {
 	private static int denaro=0;
 	boolean ritirati = true; //il padre non può aggiungere se il figlio non ha ritirato prima
 	boolean unaVoltaAlMese = false; // per simulare il ritiro una volta al mese
+	int mensilita=0;
 	
-	public synchronized void deposito(int deposito) {
-		try { while(!ritirati) {
+	public synchronized void deposito(int deposito) throws InterruptedException {
+		try { while(denaro>0) {
 			wait();
 		}
 		
@@ -20,26 +21,46 @@ public class Cassetto {
 		} catch(Exception e) {
 			System.out.println();
 		}
+		//Thread.sleep(2000);	//simulo il passare di un mes
 	}
 
-	public synchronized void prelievo(int cifra) {
-//		if(denaro>cifra) {
-		try { while(unaVoltaAlMese||denaro<cifra)  {
-			System.out.println("Aspetto");
+	public synchronized void prelievo() {
+		int cifra=(int) ((Math.random()*70)+1);
+
+		try { while(denaro==0)  {
 				wait();
 		}
 		
+		if (denaro<=cifra)
+			cifra = denaro;
+
+		while (denaro>0&&denaro>=cifra) {
+			
+			
+			if (denaro>=cifra) {
+	
+				denaro-=cifra;
+				System.out.println("Effettuato un ritiro di: "+cifra);
+				
+				
+				ritirati = true;
+				//unaVoltaAlMese = true;
+			}
+			if (denaro!=1) {
+				cifra = (int) ((Math.random()*100)+1);
+
+				while (denaro<=cifra&&denaro>0)
+					cifra = (int) ((Math.random()*100)+1);
+			}
+				else cifra = 1;
+			
+			
+			
+			
+		}
+
+		notifyAll();	
 		
-			
-			
-			denaro-=cifra;
-			System.out.println("Effettuato un ritiro di: "+cifra);
-			
-			
-			ritirati = true;
-			unaVoltaAlMese = true;
-			notifyAll();
-			
 			
 		} catch(Exception e) {
 			System.out.println();
