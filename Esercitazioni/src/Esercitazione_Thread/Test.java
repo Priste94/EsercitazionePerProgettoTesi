@@ -27,7 +27,7 @@ public class Test {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			//c.stampaDenaro();
+
 		}
 
 	}
@@ -53,7 +53,7 @@ public class Test {
 		
 		public void run() {
 			prendiSoldi();
-			//c.stampaDenaro();
+
 		}
 
 	}
@@ -75,8 +75,7 @@ public class Test {
 		g2.start();
 		f2.start();
 		
-//		while ()
-		//g.start();
+
 
 		try {
 			g1.join();
