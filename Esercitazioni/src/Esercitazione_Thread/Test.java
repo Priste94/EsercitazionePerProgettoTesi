@@ -64,24 +64,35 @@ public class Test {
 		
 		Cassetto c = new Cassetto();
 		
-		Genitore g1 = new Genitore(c) ;
-		Genitore g2 = new Genitore(c) ;
-		Figlio f1 = new Figlio(c);
-		Figlio f2 = new Figlio(c);
+		Genitore g = new Genitore(c) ;
+
+		Figlio f = new Figlio(c);
 
 
-		g1.start();		
-		f1.start();
-		g2.start();
-		f2.start();
+
+		Thread a = new Thread(g);
+		Thread b = new Thread(g);
+		Thread ct = new Thread(f);
+		Thread d = new Thread(f);
+		
+		a.start();
+		b.start();
+		ct.start();
+		d.start();
+//		
+		a.resume();
+//		g1.start();		
+//		f1.start();
+//		g2.start();
+//		f2.start();
 		
 
 
 		try {
-			g1.join();
-			f1.join();
-			g2.join();
-			f2.join();
+			a.join();
+			b.join();
+			ct.join();
+			d.join();
 		} catch (Exception e) {}
 		
 		c.stampaDenaro();
